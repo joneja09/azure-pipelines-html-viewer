@@ -1,7 +1,7 @@
 {
   "name": "azure-pipelines-postman",
   "version": "1.1.3",
-  "description": "Embed Postman HTML result into build and release tab",
+  "description": "Embed HTML REports into build and release tab",
   "main": "index.js",
   "scripts": {
     "clean": "rimraf ./dist",
@@ -9,7 +9,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/maciejmaciejewski/azure-pipelines-postman.git"
+    "url": "git+https://github.com/joneja09/azure-pipelines-html-viewer.git"
   },
   "keywords": [
     "Azure",
@@ -18,9 +18,9 @@
   "author": "Maciej Maciejewski <maciej.maciejewski@finastra.com>",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/maciejmaciejewski/azure-pipelines-postman/issues"
+    "url": "https://github.com/joneja09/azure-pipelines-html-viewer/issues"
   },
-  "homepage": "https://github.com/maciejmaciejewski/azure-pipelines-postman#readme",
+  "homepage": "https://github.com/joneja09/azure-pipelines-html-viewer#readme",
   "devDependencies": {
     "@types/node": "^13.7.4",
     "@types/node-fetch": "^2.5.5",

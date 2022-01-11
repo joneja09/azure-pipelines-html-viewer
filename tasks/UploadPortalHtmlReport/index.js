@@ -9,9 +9,10 @@ const dashify = require('dashify')
 const hat = require('hat')
 
 function run () {
-  let cwd = resolve(tl.getPathInput('cwd', true))
 
-  let files = globby.sync([cwd.replace(/\\/g, '/')], {expandDirectories : {files: ['*'], extensions: ['html']}})
+  let reportDir = resolve(tl.getPathInput('reportDirs', true))
+
+  let files = globby.sync([reportDir.replace(/\\/g, '/')], {expandDirectories : {files: ['*'], extensions: ['html']}})
 
   const fileProperties = []
 
@@ -30,7 +31,7 @@ function run () {
     tl.debug(`Uploading report`)
     const attachmentProperties = {
       name: generateName(basename(file)),
-      type: 'postman.report',
+      type: 'portal.report',
       successfull: checkIfSuccessful(document)
     }
 
@@ -38,17 +39,17 @@ function run () {
     tl.command('task.addattachment', attachmentProperties, file)
   })
 
-  const summaryPath = resolve(join(cwd,'summary.json'))
+  const summaryPath = resolve(join(reportDir,'summary.json'))
   writeFileSync(summaryPath, JSON.stringify(fileProperties))
 
-  tl.command('task.addattachment', { name: generateName('summary.json'), type: 'postman.summary'}, summaryPath)
+  tl.command('task.addattachment', { name: generateName('summary.json'), type: 'report.summary'}, summaryPath)
 }
 
 function generateName (fileName) {
   const jobName = dashify(tl.getVariable('Agent.JobName'))
   const stageName = dashify(tl.getVariable('System.StageDisplayName'))
   const stageAttempt = tl.getVariable('System.StageAttempt')
-  const tabName = tl.getInput('tabName', false ) || 'Postman'
+  const tabName = tl.getInput('tabName', false ) || 'HTML Portal'
 
   return `${tabName}.${jobName}.${stageName}.${stageAttempt}.${fileName}`
 }

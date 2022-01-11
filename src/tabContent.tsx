@@ -17,8 +17,8 @@ import { Tab, TabBar, TabSize } from "azure-devops-ui/Tabs"
 import { Card } from "azure-devops-ui/Card"
 import { IHeaderCommandBarItem } from "azure-devops-ui/HeaderCommandBar";
 
-const ATTACHMENT_TYPE = "postman.summary";
-const REPORT_ATTACHMENT_TYPE = "postman.report";
+const ATTACHMENT_TYPE = "portal.summary";
+const REPORT_ATTACHMENT_TYPE = "portal.report";
 const OUR_TASK_IDS = [
   // PROD
   "f5384bf0-1b5c-11ea-b0cc-5b064956a213",
