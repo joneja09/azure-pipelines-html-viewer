@@ -50,7 +50,7 @@ SDK.ready().then(() => {
 
 function setText (message: string) {
   console.log(message)
-  const messageContainer = document.querySelector("#postman-ext-message p")
+  const messageContainer = document.querySelector("#portal-ext-message p")
   if (messageContainer) {
     messageContainer.innerHTML = message
   }
@@ -72,8 +72,8 @@ function setError (error: Error) {
 function displayReports(attachmentClient: AttachmentClient) {
   const nbAttachments = attachmentClient.getAttachments().length
   if (nbAttachments) {
-    ReactDOM.render(<TaskAttachmentPanel attachmentClient={attachmentClient} />, document.getElementById("postman-ext-container"))
-    document.getElementById("postman-ext-message").style.display = "none"
+    ReactDOM.render(<TaskAttachmentPanel attachmentClient={attachmentClient} />, document.getElementById("portal-ext-container"))
+    document.getElementById("portal-ext-message").style.display = "none"
   } else {
   setError(Error("Could not find any report attachment"))
   }

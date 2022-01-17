@@ -7,15 +7,15 @@
     {
       "type": "node",
       "request": "launch",
-      "name": "Upload Postman Task",
-      "program": "${workspaceFolder}/tasks/UploadPostmanHtmlReport/index.js",
+      "name": "Upload Portal Task",
+      "program": "${workspaceFolder}/tasks/UploadPortalHtmlReport/index.js",
       "outputCapture": "std",
       "env": {
         "AGENT_JOBNAME": "jobname",
         "SYSTEM_DISPLAYNAME": "displayname",
         "SYSTEM_STAGEDISPLAYNAME": "stagedisplayname",
         "SYSTEM_STAGEATTEMPT": 1,
-        "INPUT_CWD": "${workspaceFolder}/tasks/UploadPostmanHtmlReport/test"
+        "INPUT_REPORTDIRS": "${workspaceFolder}/tasks/UploadPortalHtmlReport/test"
       },
       "skipFiles": [
         "<node_internals>/**"

@@ -1,24 +1,24 @@
-# Azure Devops Postman HTML Report
+# Azure Devops Portal HTML Report
 
 ## About
 
-This Azure DevOps extension provides task for Publishing Postman / Newman HTML Reports into built into Azure Storage.
+This Azure DevOps extension provides task for Publishing HTML Reports into built into Azure Storage.
 
 Reports can be viewed as a tab in Build and Release result page. Each Tab contains embeded reports as well as direct download links.
 
-For more info please refer to documentation page on [GitHub](https://github.com/maciejmaciejewski/azure-pipelines-postman)
+For more info please refer to documentation page on [GitHub](https://github.com/joneja09/azure-pipelines-html-viewer)
 
 ## Configuration
 
-In order to use this extension first add `Upload Postman HTML Report` task to your pipeline. In your Postman / Newman execution task add `htmlextra` reporter that will generate `HTML` reports.
+In order to use this extension first add `Upload Portal HTML Report` task to your pipeline. In your Portal HTML Report execution task add `html` reporter that will generate `HTML` reports.
 
-This tasks takes two parameters - required `cwd` which is path to the location where Postman / Newman HTML reports are stored and also optional `tabName` which is the name of the tab displayed within Azure DevOps report.
+This tasks takes two parameters - required `reportDirs` which is a ',' separated list of paths to the location(s) where the HTML reports are stored and also optional `tabName` which is the name of the tab displayed within Azure DevOps report.
 
 ```YAML
 steps:
-- task: UploadPostmanHtmlReport@1
-  displayName: 'Upload Postman Html Report'
+- task: UploadPortalHtmlReport@1
+  displayName: 'Upload Portal Html Report'
   inputs:
     cwd: '$(System.DefaultWorkingDirectory)'
-    tabName: 'Postman Test'
+    tabName: 'Portal Test'
 ```

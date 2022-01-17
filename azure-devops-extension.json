@@ -57,7 +57,7 @@
       "addressable": true
     },
     {
-      "path": "tasks/UploadPostmanHtmlReport",
+      "path": "tasks/UploadPortalHtmlReport",
       "addressable": false
     }
   ],
@@ -95,7 +95,7 @@
       "targets": ["ms.vss-distributed-task.tasks"],
       "properties": {
         "name": "tasks/UploadPortalHtmlReport",
-        "displayName": "Upload Postman Report"
+        "displayName": "Upload Portal Report"
       }
     }
   ]

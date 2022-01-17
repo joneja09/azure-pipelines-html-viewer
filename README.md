@@ -2,24 +2,24 @@
 
 ## About
 
-This Azure DevOps extension provides task for Publishing Postman / Newman HTML Reports into built into Azure Storage.
+This Azure DevOps extension provides task for Publishing HTML Reports to view in a tab on the Pipeline run.
 
 Reports can be viewed as a tab in Build and Release result pages.
 Tab contains embeded reports as well as direct download links.
 
 ## Configuration
 
-In order to use this extension first add `Upload Postman HTML Report` task to your pipeline. In your Postman / Newman execution task add `htmlextra` reporter that will generate `HTML` reports.
+In order to use this extension first add `Upload Portal HTML Report` task to your pipeline. In your Portal execution task add `html` reporter that will generate `HTML` reports.
 
-This tasks takes two parameters - required `cwd` which is path to the location where Postman / Newman HTML reports are stored and also optional `tabName` which is the name of the tab displayed within Azure DevOps report.
+This tasks takes two parameters - required `reportDirs` which is the path(s) to the location where the HTML reports are stored and also optional `tabName` which is the name of the tab displayed within the Azure DevOps Pipeline run.
 
 ```YAML
 steps:
-- task: UploadPostmanHtmlReport@1
-  displayName: 'Upload Postman Html Report'
+- task: UploadPortalHtmlReport@1
+  displayName: 'Upload Html Reports'
   inputs:
-    cwd: '$(System.DefaultWorkingDirectory)'
-    tabName: 'Postman Test'
+    reportDirs: '$(System.DefaultWorkingDirectory)'
+    tabName: 'Test Reports'
 ```
 
 ![](./docs/postman-report-2.png)
@@ -31,21 +31,16 @@ steps:
 ![](./docs/postman-report-1.png)
 
 ## Contributors
+
 <!-- prettier-ignore-start -->
 <!-- markdownlint-disable -->
 <table>
   <tr>
       <td align="center">
-      <a href="https://github.com/maciejmaciejewski">
-        <img src="https://avatars1.githubusercontent.com/u/15831316?v=4" width="100px;" alt=""/>
+      <a href="https://github.com/joneja09">
+        <img src="https://avatars.githubusercontent.com/u/33398109?v=4" width="100px;" alt=""/>
         <br />
-        <b>Maciej Maciejewski</b>
-    </td>
-    <td align="center">
-      <a href="https://github.com/afeblot">
-        <img src="https://avatars1.githubusercontent.com/u/12073123?v=4" width="100px;" alt=""/>
-        <br />
-        <b>Alexandre Feblot</b>
+        <b>Jeff Jones</b>
     </td>
   </tr>
 </table>
